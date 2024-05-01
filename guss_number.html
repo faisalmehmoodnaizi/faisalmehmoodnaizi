@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guss a number">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Guss Number Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: hsl(0, 100%, 90%);
+        }
+        .main{
+            width: 50%;
+            margin: auto;
+            height: 50vh;
+            display:flex;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #11111199;
+            background-color: #f3f3f3;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #myBtn{
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 50px;
+            background-color: blueviolet;
+            color: #ffffff;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #myH2{
+            color: rgb(0, 129, 129);
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #11111133;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Guss Number</h1>
+        <button id="myBtn">Click</button>
+    <h2 id="myH2"></h2>
+    </div>
+
+    <script>
+        const minNum = 1;
+        const maxNum = 100;
+
+        let button = document.getElementById('myBtn');
+        let h2 = document.getElementById('myH2');
+
+        button.onclick = function () {
+            let randomNumber = Math.floor(Math.random() * 100);
+            console.log(randomNumber);
+            h2.textContent = randomNumber;
+        }
+
+        const answer = Math.floor(Math.random() * (maxNum - minNum + 1));
+
+        console.log(answer);
+
+    </script>
+</body>
+</html>
